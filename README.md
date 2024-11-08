@@ -20,36 +20,36 @@
             display: flex;
             flex-direction: column;
             align-items: center; /* Elementlarni gorizontal markazlash */
-            width: 70%; /* Mobil ekran uchun kenglik */
+            width: 80%; /* Mobil ekran uchun kenglik */
             max-width: 600px; /* Maksimal kenglik */
         }
 
         .greetings {
-    color: black; /* Qora rang */
-    font-size: 8vw; /* Ekran o'lchamiga mos kenglikdan kelib chiqadigan hajm */
-    font-weight: bold; /* Qalin harflar */
-    margin-bottom: 20px; /* Pastga bo'shliq */
-    text-align: center; /* Markazdan joylash */
-}
+            color: black; /* Qora rang */
+            font-size: 4vw; /* Ekran o'lchamiga mos kenglikdan kelib chiqadigan hajm */
+            font-weight: bold; /* Qalin harflar */
+            margin-bottom: 3px; /* Pastga bo'shliq */
+            text-align: center; /* Markazdan joylash */
+        }
 
-@media (max-width: 600px) {
-    greetings {
-        font-size: 4vw; /* Kichik ekranlar uchun yana ham kichikroq hajm */
-    }
-}
+        @media (max-width: 600px) {
+            .greetings {
+                font-size: 2vw; /* Kichik ekranlar uchun yana ham kichikroq hajm */
+            }
+        }
 
-@media (max-width: 200px) {
-    greetings {
-        font-size: 3vw; /* Juda kichik ekranlar uchun yana ham kichikroq hajm */
-    }
-}
+        @media (max-width: 200px) {
+            .greetings {
+                font-size: 7vw; /* Juda kichik ekranlar uchun yana ham kichikroq hajm */
+            }
+        }
 
         .pin-container, .chat-container {
             background-color: #262626;
-            padding: 20px;
+            padding: 15px;
             border-radius: 20px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-            margin: 10px 0;
+            margin: 5px 0;
             width: 100%;
         }
 
@@ -65,7 +65,7 @@
             text-align: center;
         }
 
-        input[type="password"], input[type="text"] {
+        input[type="password"], input[type="text"], input[type="url"] {
             width: 100%;
             padding: 10px;
             margin: 10px 0;
@@ -80,10 +80,10 @@
             background-color: #00ff00;
             color: black;
             border: none;
-            border-radius: 12px;
+            border-radius: 10px;
             cursor: pointer;
             width: auto; /* Tugmalarning kengligi avtomatik bo'ladi */
-            margin: 5px; /* Tugmalar orasidagi bo'shliq */
+            margin: 1px; /* Tugmalar orasidagi bo'shliq */
         }
 
         button:hover {
@@ -101,14 +101,13 @@
             overflow-y: auto; /* Oqim kerak bo'lsa, skroll qiladi */
             background-color: #1c1c1c;
             padding: 10px;
-            border-radius: 2px;
+            border-radius: 10px;
             margin-bottom: 10px;
             flex: 1; /* Chat-box bo'sh joyni egallaydi */
         }
 
         .chat-message {
             margin: 5px 0;
-            opacity: 0; /* Dastlab ko'rinmas */
             animation: fadeIn 0.5s forwards, slideIn 0.5s forwards; /* Animatsiya qo'shildi */
         }
 
@@ -135,9 +134,9 @@
 
         .chat-input input {
             flex: 1; /* Xabar kiritish maydoni kengligi */
-            margin-right: 10px; /* O'ng tarafda bo'shliq */
-            height: 50px; /* Xabar kiritish joyi balandligi */
-            font-size: 16px; /* O'lcham o'zgarishi */
+            margin-right: 5px; /* O'ng tarafda bo'shliq */
+            height: 40px; /* Xabar kiritish joyi balandligi */
+            font-size: 14px; /* O'lcham o'zgarishi */
             padding: 10px; /* Ichkaridan bo'sh joy */
         }
 
@@ -158,33 +157,79 @@
                 transform: translateY(0); /* Dastur bo'yondan o'z holatiga o'tish */
             }
         }
+
+        .button-container {
+            margin-top: 20px; /* Tugma ko'rsatiladigan joy */
+            display: none; /* Dastlab ko'rsatmaymiz */
+            text-align: center; /* Markazdan joylash */
+        }
+
+        .access-button {
+            background-color: #00ff00; /* Tugma rangi */
+            color: black; /* Tugma matn rangi */
+            border-radius: 10px; /* Tugma burchaklarini yumshatish */
+            padding: 10px 30px; /* Tugma ichidagi bo'shliqlar */
+            text-decoration: none; /* Tugma matnini chizilgan holda ko'rsatmaslik */
+        }
+
+        .access-button:hover {
+            background-color: #005600; /* Tugma ustiga bosilganda rang o'zgarishi */
+        }
+
+        .centered-button {
+            display: flex; 
+            justify-content: center; /* Markazlashtirish */
+            margin-top: 5px; /* Yuqori tomondan bo'shliq */
+        }
+
+        .link-message {
+            margin-top: 10px; /* "Havola chiqadi" matniga bo'shliq */
+            text-align: center; /* Markazdan joylash */
+            color: C0000; /* Matn rangini sariq qilish */
+        }
     </style>
 </head>
 <body>
-    <div class="greetings">Qizlarga Xabar Yozish Uchun Sizda Maxsus Kod Bo'lishi Lozim </div>
-    
     <div class="container">
         <div class="pin-container">
-            <h2>Pinkod Tering Qizga Xabar Yozish Uchun..!</h2>
+            <h2>Pin kod Tering</h2>
             <form id="pinForm" onsubmit="return verifyPin(event);">
-                <input type="password" id="pin" placeholder="Pinkodni kiriting" required maxlength="3" pattern="\d{3}">
-                <div class="error-message" id="error-message">Noto'g'ri pin kod! Iltimos, qayta urinib ko'ring.</div>
-                <button type="submit">Pin Kodni Tasdiqlash</button>
+                <input type="password" id="pin" placeholder="Pinkodni kiriting" required maxlength="8" pattern="\d{1,8}">
+                <div class="error-message" id="error-message">Noto'g'ri pin kod! Iltimos, qayta urinib ko'ring...?</div>
+                <div class="centered-button">
+                    <button type="submit">Pin Kodni Tasdiqlash</button>
+                </div>
+                <div class="link-message">
+                    <h3>Tug'ri Ishlatish uchun siz video qo'llanmani ko'ring..!</h3>
+                    <input type="url" id="url" placeholder="Havolani joylashtiring....">
+                    <h2>👤 Келин номзодни Хаволасига кириб булмаса демак у зайнет ❗️ ...!</h2>
+                </div>
+                <div class="button-container" id="buttonContainer">
+                    <a href="#" id="girlLink" class="access-button" target="_blank">Qizning havolasi</a>
+                </div>
             </form>
         </div>
-
+        
         <div class="chat-container">
             <h2>Online Chat 7/24</h2>
             <div class="chat-box" id="chatBox"></div>
+
+            <!-- Chat yozish joyi -->
             <div class="chat-input">
                 <input type="text" id="chatMessage" placeholder="Xabar yozing..." required>
                 <button onclick="sendMessage()">Yuborish</button>
-                <button onclick="window.location.href='https://t.me/m/ODj4SY-yNzg6'">Kod Sotib olish</button>
+            </div>
+
+            <!-- Tugmalarni joylashtirish -->
+            <div class="chat-input">
+                <button onclick="window.location.href='https://t.me/Munisa_Admen'">Kod Sotib olish</button>
+                <a href="https://t.me/Munisa_Admen" class="access-button" target="_blank">Elon berish</a>
             </div>
         </div>
     </div>
 
     <script>
+        const validPins = ['760', '6622', '6722']; // Yangi pin kodlar ro'yhati
         const botMessages = [
             "Kicha Mazza Qildim, telfonda gaplashdim 🥰",
             "Vay iflos xaromi ekan, lichkamga mani sukib qochib kitibdi",
@@ -947,6 +992,328 @@
         ];
 
         const bots = ['Foydalanuvchi', 'Foydalanuvchi', 'Foydalanuvchi'];
+        const links = [
+            "https://t.me/Dushamoya40",
+            "https://t.me/xonzodabo",
+            "https://t.me/Qaqnus_1",
+            "https://t.me/dfgyhjkh",
+            "https://t.me/Thjjgfdeefffdd",
+            "https://t.me/OYXON_001",
+            "https://t.me/OYDIOO",
+            "https://t.me/Dill1290",
+            "https://t.me/Mel1ni",
+            "https://t.me/ummi_0088",
+            "https://t.me/Solihakizz",
+            "https://t.me/Txab7",
+            "https://t.me/hghb67gf",
+            "https://t.me/Znzkz11",
+            "https://t.me/Kozmunchogim27",
+            "https://t.me/Shirin_00_77",
+            "https://t.me/sayil555",
+            "https://t.me/oyqiz25",
+            "https://t.me/mis_li6007",
+            "https://t.me/Ziyo0841",
+            "https://t.me/Tabbahu",
+            "https://t.me/Baxtiimsiiz",
+            "https://t.me/hggff65yt56yt",
+            "https://t.me/shhda1984",
+            "https://t.me/Bismillah7865",
+            "https://t.me/hghyfy65tr",
+            "https://t.me/Inshaolloh852911",
+            "https://t.me/hghttr5",
+            "https://t.me/Gulimmmii",
+            "https://t.me/Sabinam_0107",
+            "https://t.me/hgh6vuy65t",
+            "https://t.me/Shirin_070",
+            "https://t.me/Rafeanna",
+            "https://t.me/Zulxumor1971",
+            "https://t.me/ladybossincluded",
+            "https://t.me/Flora_by_Dilshoda",
+            "https://t.me/Beautydollyy",
+            "https://t.me/rich33331",
+            "https://t.me/samera_1305",
+            "https://t.me/farzandlarim3333",
+            "https://t.me/Du9909",
+            "https://t.me/Quen_0320",
+            "https://t.me/komila_11111114",
+            "https://t.me/Layloo14",
+            "https://t.me/Rohman667",
+            "https://t.me/swn_2001",
+            "https://t.me/Zulayho0212",
+            "https://t.me/Y1284",
+            "https://t.me/Muslim55779",
+            "https://t.me/Sevaramirza",
+            "https://t.me/Mtv1023",
+            "https://t.me/Taqdirlar_17",
+            "https://t.me/Asmo_12345",
+            "https://t.me/baxtlilar1112",
+            "https://t.me/maftun_878",
+            "https://t.me/matlab012200",
+            "https://t.me/Senmenzora",
+            "https://t.me/Mushtariy6765",
+            "https://t.me/omad2222222",
+            "https://t.me/BaxtimniberOllohim",
+            "https://t.me/Yulduzxon0910",
+            "https://t.me/d_n_zkizi",
+            "тел раками +79941066847",
+            "тел раками +79319657208",
+            "https://t.me/dil2321",
+            "https://t.me/Qizimmen",
+            "https://t.me/Bahtlemannn",
+            "https://t.me/kudvakxueba",
+            "https://t.me/s_2_002",
+            "https://t.me/Hayotqisqaqadrigayet",
+            "https://t.me/A0808U",
+            "https://t.me/Birnalsalar",
+            "https://t.me/MEHRIBONM1709",
+            "https://t.me/Zoluwka1",
+            "https://t.me/sabr1234568",
+            "https://t.me/Ziynat1505",
+            "https://t.me/deha97",
+            "https://t.me/MISSISS_789",
+            "https://t.me/drnazlish",
+            "https://t.me/soonwedding24",
+            "https://t.me/Yulduz_0925",
+            "https://t.me/Ollohga_oshiq7",
+            "https://t.me/Lolagulim0996",
+            "https://t.me/Dunyoyim0790",
+            "https://t.me/Baxt_Sari98",
+            "https://t.me/bonush_12345",
+            "https://t.me/Raximova_44",
+            "https://t.me/Agirl_f",
+            "https://t.me/Sabirliqalbim03",
+            "https://t.me/Guli858589",
+            "https://t.me/jonmqizm",
+            "https://t.me/NavRoza590",
+            "https://t.me/qalllb_90",
+            "https://t.me/asalya2018",
+            "https://t.me/Alhamdullilah090",
+            "https://t.me/Sabrlibolilik",
+            "https://t.me/Kkkk00900000",
+            "https://t.me/kjkjvc",
+            "https://t.me/sofa07070",
+            "https://t.me/Beautiful1w",
+            "https://t.me/Sabrligim_o26",
+            "https://t.me/Shahrizaad9320",
+            "https://t.me/my23o",
+            "https://t.me/l00s1",
+            "https://t.me/Dilozorim42",
+            "https://t.me/Quvonchim0066",
+            "https://t.me/hjhgg67uyg",
+            "https://t.me/Qalbimdasansenmeni",
+            "https://t.me/ATT_12334",
+            "https://t.me/SUBHAN_ALLOHUMMA",
+            "https://t.me/alhamdullilah_shukr",
+            "https://t.me/Shunchak1_37_87",
+            "https://t.me/sizushamuu",
+            "https://t.me/Onam_2020",
+            "https://t.me/Hdhdh3932",
+            "https://t.me/monikamaniya",
+            "https://t.me/Oisha_1",
+            "https://t.me/AllohimmengaMehribon",
+            "https://t.me/Qalbiquyoshimm",
+            "https://t.me/Imrona_m",
+            "https://t.me/baxt0000000",
+            "https://t.me/BEHRUZBEK555",
+            "https://t.me/Sabir2230",
+            "https://t.me/Baxt_iymonda",
+            "https://t.me/Inshaolloh852911",
+            "https://t.me/Gogosha2345",
+            "https://t.me/SUYANGANIMALLOHIM1",
+            "https://t.me/jenifer_lops",
+            "https://t.me/Yulduzchahonn",
+            "https://t.me/education_011",
+            "https://t.me/iymona0597",
+            "https://t.me/yagonayu",
+            "https://t.me/Guldil95",
+            "https://t.me/olloh0905",
+            "https://t.me/LYOMM444555666777888999",
+            "https://t.me/Sofiya_77777",
+            "https://t.me/Mtv1023",
+            "https://t.me/bonush_12345",
+            "https://t.me/Nilufaar_life",
+            "https://t.me/Gilobss",
+            "https://t.me/Saaaabbrrr",
+            "https://t.me/Oisha0000",
+            "https://t.me/Niso5710",
+            "https://t.me/mahliyoqurbonova1",
+            "https://t.me/Alhamdullilah090",
+            "https://t.me/Uzer11818",
+            "https://t.me/thes0ra",
+            "https://t.me/Muslimem2021",
+            "https://t.me/Medic_0196",
+            "https://t.me/Shirina6261",
+            "https://t.me/zob92",
+            "https://t.me/InshaOllohsolixa",
+            "https://t.me/Fare_001",
+            "https://t.me/baxtli_hayot77",
+            "https://t.me/dmjtm",
+            "https://t.me/Dilnura600",
+            "https://t.me/Hhhaxxyotttbeshavqat",
+            "https://t.me/ummuabdulloh9",
+            "https://t.me/shahzow06",
+            "https://t.me/AishaJavohir",
+            "https://t.me/Strawberry9333",
+            "https://t.me/iymonli2002",
+            "https://t.me/MISSISS_789",
+            "https://t.me/Munnipunni",
+            "https://t.me/Gul_laziz",
+            "https://t.me/maya266662",
+            "https://t.me/Ezoz9717",
+            "https://t.me/ADILOVNA777",
+            "https://t.me/Lola4005",
+            "https://t.me/Beautydollyy",
+            "https://t.me/malak_00122",
+            "https://t.me/Asapchaxon",
+            "https://t.me/malak_00122",
+            "https://t.me/kamina_20_00",
+            "https://t.me/Javoxir_jan",
+            "https://t.me/Rolll00",
+            "https://t.me/sultonovaguliy",
+            "https://t.me/Niso_34",
+            "https://t.me/QDU_9800",
+            "https://t.me/nafasim_11",
+            "https://t.me/N7vdrt",
+            "https://t.me/Achilova1105",
+            "https://t.me/sabriya889",
+            "https://t.me/dilim_1919",
+            "https://t.me/MISSISS_789",
+            "https://t.me/laylo013",
+            "https://t.me/Solixa3747",
+            "https://t.me/Kaktus_5253",
+            "https://t.me/Nofede",
+            "https://t.me/XXXX0317",
+            "https://t.me/AA_2309",
+            "https://t.me/Muniscik009",
+            "https://t.me/Qalamqosh_09",
+            "https://t.me/Meddii_kk",
+            "https://t.me/floraandfauna8899",
+            "https://t.me/Qoriyaqiz83",
+            "https://t.me/Qirolicha5556",
+            "https://t.me/FEPED",
+            "https://t.me/Matluba_6446",
+            "https://t.me/Shine_9799",
+            "https://t.me/Missbegim_32",
+            "https://t.me/hghttr5",
+            "https://t.me/hgfgft45tru",
+            "https://t.me/Sofiya200223",
+            "https://t.me/Elzapiter",
+            "https://t.me/Dunyo_91_11_04",
+            "https://t.me/azeliystayl",
+            "https://t.me/NODIRA_UZB_ll",
+            "https://t.me/Gulsevargul",
+            "https://t.me/Missbegim_32",
+            "https://t.me/Nizomova_001",
+            "https://t.me/Ghoyoa",
+            "https://t.me/hiloloy99",
+            "https://t.me/Muslmanka27",
+            "https://t.me/Mohlar0000",
+            "https://t.me/usernamecsc",
+            "https://t.me/Aa220707",
+            "https://t.me/jibalu",
+            "https://t.me/laylo013",
+            "https://t.me/Sadiiya99",
+            "https://t.me/Shukrona223",
+            "https://t.me/nargiz007788",
+            "https://t.me/Safia_2028",
+            "https://t.me/KOKOSHSHA",
+            "https://t.me/XalilovaS7",
+            "https://t.me/nadya_tvoya",
+            "https://t.me/TUMERIS66",
+            "https://t.me/pandora_55",
+            "https://t.me/donowa01",
+            "https://t.me/Nargiza_1990a",
+            "https://t.me/Hayot1726",
+            "https://t.me/MUBJJK",
+            "https://t.me/dilzo_daa",
+            "https://t.me/aswannabe",
+            "https://t.me/Mahzunbolma0",
+            "https://t.me/Zzz1803",
+            "https://t.me/rbeauty0595",
+            "https://t.me/Ansor83",
+            "https://t.me/Dhjkl77",
+            "https://t.me/Mmmmmgul",
+            "https://t.me/Alhamdulillahee",
+            "https://t.me/Ozoda2018",
+            "https://t.me/Wait_and_see93",
+            "https://t.me/Magzunbolma0",
+            "https://t.me/Musfira_1995",
+            "https://t.me/we_are_one_77",
+            "https://t.me/Dilsor9",
+            "https://t.me/gulim_75",
+            "https://t.me/amenat1m",
+            "https://t.me/Alhamdulillaah",
+            "https://t.me/aiwem_002",
+            "https://t.me/Xusnora_123",
+            "https://t.me/Kozmonchogiimm",
+            "https://t.me/w7007wa",
+            "https://t.me/hgh6vbkumush",
+            "https://t.me/Luna_me13",
+            "https://t.me/Sarmahbonu",
+            "https://t.me/xayotdancharchadim",
+            "https://t.me/Allohimmexribonim",
+            "https://t.me/Rudgfjf",
+            "https://t.me/dmin_ruu",
+            "https://t.me/DZ199204",
+            "https://t.me/hjhgg67uyg",
+            "https://t.me/Solihakizz",
+            "https://t.me/Doktorhonim",
+            "https://t.me/yunsobod_77",
+            "https://t.me/hghgfdft54re",
+            "https://t.me/Osiyo7778",
+            "https://t.me/dilnoza4002",
+            "https://t.me/qalllb_90",
+            "https://t.me/Bahf88",
+            "https://t.me/BAHTLI_97",
+            "https://t.me/lola_4546",
+            "https://t.me/Floridaaadf",
+            "https://t.me/NKX085",
+            "https://t.me/In1224",
+            "https://t.me/fahriyemmm",
+            "https://t.me/sakiynat505",
+            "+79933573135 Watsap Nomeri",
+            "+79941066847 Watsap Nomeri",
+            "https://t.me/olloxmasra",
+            "https://t.me/Muslimaman1999",
+            "https://t.me/Alijanova3262",
+            "https://t.me/Malagim_0917",
+            "https://t.me/Rohman667",
+            "https://t.me/Munchogim19",
+            "https://t.me/Sh2583za",
+            "https://t.me/Erkatoy888",
+            "https://t.me/qalbim1991",
+            "https://t.me/sobitova_881",
+            "https://t.me/bella_1753",
+            "https://t.me/Gulsevargul",
+            "https://t.me/Ansora23",
+            "https://t.me/Muzrabjonovna",
+            "https://t.me/Dil_llim",
+            "https://t.me/Azizanurmatova002",
+            "https://t.me/RZohidova",
+            "https://t.me/UmmuMuhammad1920",
+            "https://t.me/lady290489",
+            "https://t.me/Mubiwjonm",
+            "https://t.me/Asaloy9",
+            "https://t.me/Rux0899",
+            "https://t.me/Fara0413",
+            "https://t.me/vv8283",
+            "https://t.me/Jinnimaku_25",
+            "https://t.me/Kamronim150623",
+            "https://t.me/Xastakongill",
+            "https://t.me/Kabatullohn",
+            "https://t.me/RNB198510",
+            "https://t.me/Abd82p1",
+            "https://t.me/sheha_010",
+            "https://t.me/gulim_0099",
+            "https://t.me/Faya_033",
+            "https://t.me/Dilyusha80",
+            "https://t.me/laylo013",
+            "https://t.me/Oyisha444",
+            "https://t.me/flloresss",
+            "https://t.me/muza_888888",
+            "https://t.me/arall22",
+            "https://t.me/Tyulpancha"
+        ];
 
         let botInterval;
 
@@ -971,13 +1338,32 @@
         function verifyPin(event) {
             event.preventDefault();
             const pin = document.getElementById('pin').value;
-            const correctPin = '9225';
             const errorMessage = document.getElementById('error-message');
+            const buttonContainer = document.getElementById('buttonContainer');
 
-            if (pin === correctPin) {
+            if (validPins.includes(pin)) {
                 alert('Kirish muvaffaqiyatli!');
+                // Tasodifiy havola ko'rsatish
+                const randomLink = links[Math.floor(Math.random() * links.length)];
+                const girlLink = document.getElementById('girlLink');
+                girlLink.href = randomLink; // Havolani yangilash
+                buttonContainer.style.display = 'block'; // Tugmani ko'rsatish
             } else {
                 errorMessage.style.display = 'block';
+            }
+        }
+
+        // Havola yuklash
+        function uploadLink() {
+            const url = document.getElementById('url').value; // Foydalanuvchidan URL olish
+            const buttonContainer = document.getElementById('buttonContainer');
+
+            if (url) {
+                alert(`Havola yuklandi: ${url}`); // Xabarnoma
+                document.getElementById('url').value = ''; // Inputni tozalash
+                buttonContainer.style.display = 'block'; // Havolani ko'rsatish
+            } else {
+                alert('Iltimos, havolani kiritishingiz mumkin, lekin bu majburiy emas.');
             }
         }
 
