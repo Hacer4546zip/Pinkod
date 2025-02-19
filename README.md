@@ -237,9 +237,6 @@
                 
                 <p>5. <strong>Hurmat:</strong> Har doim hurmat va odob doirasida muloqot qiling.</p>
                 
-                <p>🤝 Biz sizga eng yaxshi tajribani taqdim etish uchun harakat qilamiz.</p>
-                
-                <p>💖 Sizga omad va baxt tilaymiz! Umid qilamizki, siz o'z juftingizni topasiz.</p>
             </div>
             <button class="modal-button" onclick="closeWelcomeModal()">Tanishdim va Roziman</button>
         </div>
