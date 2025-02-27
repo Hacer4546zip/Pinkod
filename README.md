@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -250,9 +252,6 @@
                 <p>📝 Hurmatli foydalanuvchi, quyidagi qoidalarga e'tibor bering:</p>
                 <p>1. <strong>To'liq ma'lumot:</strong> Kelin nomzodga yozishda 3-4 ta sifatli rasm va batafsil ma'lumot taqdim eting.</p>
                 <p>2. <strong>Samimiylik:</strong> Suhbatda samimiy va hurmatli bo'ling.</p>
-                <p>3. <strong>Sabr:</strong> Agar darhol javob ololmasangiz, sabr qiling.</p>
-                <p>4. <strong>Spam qilmang:</strong> Takroriy xabarlar taqiqlanadi.</p>
-                <p>5. <strong>Hurmat:</strong> Har doim odob doirasida muloqot qiling.</p>
             </div>
             <button class="modal-button" onclick="closeWelcomeModal()">Tanishdim va Roziman</button>
         </div>
@@ -316,67 +315,66 @@
         ];
 
         const randomUrls = [
-            "https://t.me/Fatima_SSaida",
-"https://t.me/Wifo_uz",
-"https://t.me/Kabatullohn",
-"https://t.me/Sevganim_Allohhh",
-"https://t.me/La_ilaha_iloloh",
-"https://t.me/shahzoda5191",
-"https://t.me/ATT61S",
-"https://t.me/Azizaqizz",
-"https://t.me/ooo_drm",
-"https://t.me/Kabatullohn",
-"https://t.me/IN1816",
-"https://t.me/Zxhio",
-"https://t.me/mlkmshm",
-"https://t.me/mubicaaa",
-"https://t.me/Little_lady21",
-"https://t.me/tttttfffffffshoira",
-"https://t.me/Omad_84",
-"https://t.me/Kabatullohn",
-"https://t.me/FM0890",
-"https://t.me/Zarina744",
-"https://t.me/A_R5676",
-"https://t.me/muniGu",
-"https://t.me/Muslimova1234",
-"https://t.me/shahzodaco",
-"https://t.me/safiyya85",
-"https://t.me/IN1816",
-"https://t.me/SafiyaaaaAahshs",
-"https://t.me/LeylaLayli",
-"https://t.me/Tyue900",
-"https://t.me/LightOffMoon",
-"https://t.me/Qaysar_Qizaloq_111",
+            "https://t.me/nazjed",
+"https://t.me/BKAUZ",
+"https://t.me/KMMMM022",
+"https://t.me/Mimii0707",
+"https://t.me/Loooooooooooooveeeeeeeeeeeeeeee",
 "https://t.me/sakinatunni",
-"https://t.me/nanii88ii",
-"https://t.me/DILYA_56_56",
-"https://t.me/Hhayo1",
-"https://t.me/Fkxnfdofke",
-"https://t.me/Mehribon1234",
-"https://t.me/aslanka7778",
-"https://t.me/asal2904",
-"https://t.me/raffae89",
-"https://t.me/SHoiraopa7",
-"https://t.me/Fza_05",
-"https://t.me/yasminka_o5",
-"https://t.me/barnow_1317",
-"https://t.me/Nodiraaa1144",
-"https://t.me/tasodf_560",
-"https://t.me/Laylo_hon",
-"https://t.me/Fazo111111",
-"https://t.me/hctdf7",
-"https://t.me/mmbbf_a",
-"https://t.me/X_MOXIM",
-"https://t.me/Nelll22",
-"https://t.me/Yunusova1331",
-"https://t.me/Fotima7133",
-"https://t.me/Dil_28_28",
-"https://t.me/Sumi6361",
-"https://t.me/Shirin0110",
-"https://t.me/Erkatoyka_1999",
-"https://t.me/ddd6367",
-"https://t.me/Baxtliman2025",
-"https://t.me/Musfira2000"
+"https://t.me/Ir_4443",
+"https://t.me/Mtttxh",
+"https://t.me/AADJ00",
+"https://t.me/Nur7668",
+"https://t.me/sabina_a26",
+"https://t.me/Qadarim_1111",
+"https://t.me/MAUUAF",
+"https://t.me/sunshinelab",
+"https://t.me/jmkkahs",
+"https://t.me/GMBJT",
+"https://t.me/Lolo0987655",
+"https://t.me/sakinatunni",
+"https://t.me/Betakrorrrrr",
+"https://t.me/Toliba_1111",
+"https://t.me/Gulii_1988",
+"https://t.me/millaa_milaa",
+"https://t.me/Azizovna_234",
+"https://t.me/culture773",
+"https://t.me/megann6",
+"https://t.me/Saida_Saiii",
+"https://t.me/ZSFZAI",
+"https://t.me/l01l29l",
+"https://t.me/Gullililili",
+"https://t.me/Stamina_095",
+"https://t.me/olloh_sabr",
+"https://t.me/FaFatimkaaAaaaaaaa",
+"https://t.me/Shosha177M",
+"https://t.me/Oishaprensess",
+"https://t.me/Shaxzo_8181",
+"https://t.me/Imtxonnn",
+"https://t.me/Bobomurodova01",
+"https://t.me/Dildora8877",
+"https://t.me/Sabrligim070",
+"https://t.me/Beautydollyy",
+"https://t.me/Oyisham_002",
+"https://t.me/sabr_11122",
+"https://t.me/Maryam_7708",
+"https://t.me/Feax_sam",
+"https://t.me/Baxtkeldi",
+"https://t.me/Fatima_SSaida",
+"https://t.me/Wifo_uz",
+"https://t.me/Afsona_1467",
+"https://t.me/Alhamdulillah202323",
+"https://t.me/baxt09bek",
+"https://t.me/faya2305",
+"https://t.me/Maxmud1713",
+"https://t.me/Jannatga_yol_7790",
+"https://t.me/Mina1892",
+"https://t.me/lonely_0220",
+"https://t.me/kuzmunchogim999",
+"https://t.me/Sadoqatli_bul",
+"https://t.me/nurmatov197628",
+"https://t.me/Maftunaa2001y",
+"https://t.me/Sa9fi"
             // Qo‘shimcha URL’larni qisqartirdim, asl ro‘yxatni qoldirishingiz mumkin
         ];
 
@@ -536,3 +534,4 @@
         }
     </script>
 </body>
+</html>
