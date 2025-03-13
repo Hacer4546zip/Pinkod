@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -296,7 +294,7 @@
         const STORAGE_KEY = "pinCodeData";
         const maxLength = 4;
         const minLength = 2;
-        const validPins = ["705", "769", "760", "6688", "6687", "750"];
+        const validPins = ["705", "769", "760", "6658", "6657", "750"];
         let pin = "";
         let attempts = 0;
 
@@ -315,66 +313,37 @@
         ];
 
         const randomUrls = [
-            "https://t.me/nazjed",
-"https://t.me/BKAUZ",
-"https://t.me/KMMMM022",
-"https://t.me/Mimii0707",
-"https://t.me/Loooooooooooooveeeeeeeeeeeeeeee",
-"https://t.me/sakinatunni",
-"https://t.me/Ir_4443",
-"https://t.me/Mtttxh",
-"https://t.me/AADJ00",
-"https://t.me/Nur7668",
-"https://t.me/sabina_a26",
-"https://t.me/Qadarim_1111",
-"https://t.me/MAUUAF",
-"https://t.me/sunshinelab",
-"https://t.me/jmkkahs",
-"https://t.me/GMBJT",
-"https://t.me/Lolo0987655",
-"https://t.me/sakinatunni",
-"https://t.me/Betakrorrrrr",
-"https://t.me/Toliba_1111",
-"https://t.me/Gulii_1988",
-"https://t.me/millaa_milaa",
-"https://t.me/Azizovna_234",
-"https://t.me/culture773",
-"https://t.me/megann6",
+            "https://t.me/Ajinauz",
+"https://t.me/MoonBloom001",
+"https://t.me/kdhebmd",
 "https://t.me/Saida_Saiii",
-"https://t.me/ZSFZAI",
-"https://t.me/l01l29l",
-"https://t.me/Gullililili",
-"https://t.me/Stamina_095",
-"https://t.me/olloh_sabr",
-"https://t.me/FaFatimkaaAaaaaaaa",
-"https://t.me/Shosha177M",
-"https://t.me/Oishaprensess",
-"https://t.me/Shaxzo_8181",
-"https://t.me/Imtxonnn",
-"https://t.me/Bobomurodova01",
-"https://t.me/Dildora8877",
-"https://t.me/Sabrligim070",
+"https://t.me/Umnitsa6554",
+"https://t.me/erkinovna0226",
+"https://t.me/MaM3015",
+"https://t.me/kameta00l",
+"https://t.me/myanonimaccaunt",
+"https://t.me/asaal_002",
+"https://t.me/Assalom_93",
+"https://t.me/Nillyuushka007",
+"https://t.me/Izzatullayevna02",
+"https://t.me/alMusavvir14",
+"https://t.me/ooo_drm",
+"https://t.me/miirsaidovnaaa",
 "https://t.me/Beautydollyy",
-"https://t.me/Oyisham_002",
-"https://t.me/sabr_11122",
-"https://t.me/Maryam_7708",
-"https://t.me/Feax_sam",
-"https://t.me/Baxtkeldi",
-"https://t.me/Fatima_SSaida",
-"https://t.me/Wifo_uz",
-"https://t.me/Afsona_1467",
-"https://t.me/Alhamdulillah202323",
-"https://t.me/baxt09bek",
-"https://t.me/faya2305",
-"https://t.me/Maxmud1713",
-"https://t.me/Jannatga_yol_7790",
-"https://t.me/Mina1892",
-"https://t.me/lonely_0220",
-"https://t.me/kuzmunchogim999",
-"https://t.me/Sadoqatli_bul",
-"https://t.me/nurmatov197628",
-"https://t.me/Maftunaa2001y",
-"https://t.me/Sa9fi"
+"https://t.me/La_xovla_vala_quvvata",
+"https://t.me/faqatoldingah",
+"https://t.me/da_ollov",
+"https://t.me/dredd6",
+"https://t.me/Alhamdulillahxi",
+"https://t.me/D15_78",
+"https://t.me/Munisa_5505",
+"https://t.me/Shirina_770",
+"https://t.me/uzbechka_0604",
+"https://t.me/Nasstariin",
+"https://t.me/Mursalina002",
+"https://t.me/Uzbekistan4142",
+"https://t.me/pamey77",
+"https://t.me/Dunyo2503"
             // Qo‘shimcha URL’larni qisqartirdim, asl ro‘yxatni qoldirishingiz mumkin
         ];
 
@@ -534,4 +503,3 @@
         }
     </script>
 </body>
-</html>
