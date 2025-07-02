@@ -1691,4 +1691,3 @@ Prompt: ${prompt}`
         });
     </script>
 </body>
-</html>
